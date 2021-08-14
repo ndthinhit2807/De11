@@ -31,6 +31,9 @@ public class ChucNang {
 
     public void docFile(String path,String content1,String content2) {
 try {
+                        Client client = new Client();
+                        System.out.println(client.soN);
+                        
                         FileReader fr = new FileReader(new File(path));
                         StringBuffer sb = new StringBuffer();
                         char ca[] = new char[5];
@@ -43,7 +46,7 @@ try {
             
                         ArrayList<String> mauso = new ArrayList<String>();
                         String a = sb.toString();
-                        for (int i = 0; i < 10 ; i++) {
+                        for (int i = 0; i < client.soN ; i++) {
                                 String[] parts = a.split("\\n");
                                 String mau = parts[i];//split lấy trước enter
                                 System.out.println(mau);

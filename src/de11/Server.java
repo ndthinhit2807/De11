@@ -149,8 +149,8 @@ public class Server extends javax.swing.JFrame {
 
             while (true) {
 
-                String SECRET_KEY = txtkey.getText();
-                SecretKeySpec skeySpec = new SecretKeySpec(SECRET_KEY.getBytes(), "DES");
+//                String SECRET_KEY = txtkey.getText();
+//                SecretKeySpec skeySpec = new SecretKeySpec(SECRET_KEY.getBytes(), "DES");
 
                 DatagramSocket datagramSocket = new DatagramSocket(5432);
 
@@ -172,18 +172,18 @@ public class Server extends javax.swing.JFrame {
                 txtcontent1.setText(line);
                 System.out.println(line);
 
-                Cipher cipher = Cipher.getInstance("DES/ECB/PKCS5PADDING");//mã hoá
-                cipher.init(Cipher.ENCRYPT_MODE, skeySpec);
-                byte[] byteEncrypted = cipher.doFinal(txtcontent1.getText().getBytes());
-                String encrypted = Base64.getEncoder().encodeToString(byteEncrypted);
-                System.out.println(encrypted);
+//                Cipher cipher = Cipher.getInstance("DES/ECB/PKCS5PADDING");//mã hoá
+//                cipher.init(Cipher.ENCRYPT_MODE, skeySpec);
+//                byte[] byteEncrypted = cipher.doFinal(txtcontent1.getText().getBytes());
+//                String encrypted = Base64.getEncoder().encodeToString(byteEncrypted);
+//                System.out.println(encrypted);
 
 //                cipher.init(Cipher.DECRYPT_MODE, skeySpec);
 //                byte[] byteDecrypted = cipher.doFinal(byteEncrypted);
 //                String decrypted = new String(byteDecrypted);
 
                 ChucNang chucNang = new ChucNang();
-                chucNang.ghiFile(txtpath.getText(), encrypted);
+                chucNang.ghiFile(txtpath.getText(), txtcontent1.getText());
                 chucNang.docFile(txtpath.getText(), txtcontent1.getText(), txtcontent2.getText());
                 txtcontent1.setText(chucNang.content1);
                 txtcontent2.setText(chucNang.content2);
