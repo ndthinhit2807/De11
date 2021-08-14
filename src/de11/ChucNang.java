@@ -46,7 +46,7 @@ try {
             
                         ArrayList<String> mauso = new ArrayList<String>();
                         String a = sb.toString();
-                        for (int i = 0; i < client.soN ; i++) {
+                        for (int i = 0; i < 10; i++) {
                                 String[] parts = a.split("\\n");
                                 String mau = parts[i];//split lấy trước enter
                                 System.out.println(mau);
